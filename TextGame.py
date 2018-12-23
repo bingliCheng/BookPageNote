@@ -1,13 +1,15 @@
-# Encoding: utf-8
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 # Author: bingli
-# Date: 2018.12.22
-# Description: 文字游戏...
+# Date: 2018.12.23
+# Description: 文字游戏
 # version: 0.0.1
+
 
 from sys import argv, exit
 
 # 解包
-script_name, uname ,difficulty= argv
+script_name, uname = argv
 
 prompt = "> "
 
@@ -17,21 +19,6 @@ def start_print():
     print "大巴马上就要启动了，请系好安全带，管理好自己的行李。"
     print "你四处看了看大巴发现大巴上人并不多，你猜他们可能是跟你一样是回家的人，不过不用多想就知道大部分人肯定是去神农架那边游玩。"
     print "大巴启动了。窗外的风景都被甩在了背后，你看着窗外觉得你有点困了"
-
-def choose_difficulty(difficulty):
-    """ 游戏的难度 """
-    print "%s,你选择的游戏难度是： %s级" % (uname, difficulty)
-    print "正在为你生成游戏..."
-    
-    # 难度越难，死亡率越高
-    if difficulty == "1":
-        print "-----------------------------\a"
-    elif difficulty == "2":
-        print "*****************************\a"
-    elif difficulty == "3":
-        print "=============================\a"
-    else:
-        print "游戏难度只有1-3！"
 
 def choose_awake(next):
     """ 选择睡觉，或者清醒 """
@@ -100,7 +87,7 @@ def dead(reson):
 
 def start():
     """ 开始游戏 """
-    choose_difficulty(difficulty)
+    print "--------------游戏开始--------------"
     start_print()
 
     print "1. 闭上眼睛，休息一会儿。(休息)"
